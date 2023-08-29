@@ -18,9 +18,9 @@ function set(num){
     switch(num){
         case 1:
             if(sign!=""){
-                if(second==0){second = "1";
+                if(secondNumber==0){secondNumber = "1";
             break;}
-            second = second+"1";
+            secondNumber = secondNumber+"1";
             break;
             }
             if(firstNumber==0){firstNumber = "1";
@@ -29,9 +29,9 @@ function set(num){
             break;
         case 2:
             if(sign!=""){
-                if(second==0){second = "2";
+                if(secondNumber==0){secondNumber = "2";
             break;}
-            second = second+"2";
+            secondNumber = secondNumber+"2";
             break;
             }
             if(firstNumber==0){firstNumber = "2";
@@ -40,9 +40,9 @@ function set(num){
             break;
         case 3:
             if(sign!=""){
-                if(second==0){second = "3";
+                if(secondNumber==0){secondNumber = "3";
             break;}
-            second = second+"3";
+            secondNumber = secondNumber+"3";
             break;
             }
             if(firstNumber==0){firstNumber = "3";
@@ -51,9 +51,9 @@ function set(num){
             break;
         case 4:
             if(sign!=""){
-                if(second==0){second = "4";
+                if(secondNumber==0){secondNumber = "4";
             break;}
-            second = second+"4";
+            secondNumber = secondNumber+"4";
             break;
             }
             if(firstNumber==0){firstNumber = "4";
@@ -62,9 +62,9 @@ function set(num){
             break;
         case 5:
             if(sign!=""){
-                if(second==0){second = "5";
+                if(secondNumber==0){secondNumber = "5";
             break;}
-            second = second+"5";
+            secondNumber = secondNumber+"5";
             break;
             }
             if(firstNumber==0){firstNumber = "5";
@@ -73,9 +73,9 @@ function set(num){
             break;
         case 6:
             if(sign!=""){
-                if(second==0){second = "6";
+                if(secondNumber==0){secondNumber = "6";
             break;}
-            second = second+"6";
+            secondNumber = secondNumber+"6";
             break;
             }
             if(firstNumber==0){firstNumber = "6";
@@ -84,9 +84,9 @@ function set(num){
             break;
         case 7:
             if(sign!=""){
-                if(second==0){second = "7";
+                if(secondNumber==0){secondNumber = "7";
             break;}
-            second = second+"7";
+            secondNumber = secondNumber+"7";
             break;
             }
             if(firstNumber==0){firstNumber = "7";
@@ -95,9 +95,9 @@ function set(num){
             break;
         case 8:
             if(sign!=""){
-                if(second==0){second = "8";
+                if(secondNumber==0){secondNumber = "8";
             break;}
-            second = second+"8";
+            secondNumber = secondNumber+"8";
             break;
             }
             if(firstNumber==0){firstNumber = "8";
@@ -106,9 +106,9 @@ function set(num){
             break;
         case 9:
             if(sign!=""){
-                if(second==0){second = "9";
+                if(secondNumber==0){secondNumber = "9";
             break;}
-            second = second+"9";
+            secondNumber = secondNumber+"9";
             break;
             }
             if(firstNumber==0){firstNumber = "9";
@@ -117,9 +117,9 @@ function set(num){
             break; 
         case 0: 
         if(sign!=""){
-            if(second==0){second = "0";
+            if(secondNumber==0){secondNumber = "0";
         break;}
-        second = second+"0";
+        secondNumber = secondNumber+"0";
         break;
         }
             if(firstNumber==0){firstNumber = "0";
@@ -132,8 +132,13 @@ function set(num){
 firstNumber=parseInt(firstNumber);
 
 numbers.forEach(number=>number.addEventListener("click",()=>{
+    if(sign!=""){
+        screen.textContent=secondNumber;
+    }
     screen.textContent=firstNumber;}));
+   
     let secondNumber = 0;
+    secondNumber=parseInt(secondNumber);
 function subtract(first,second){
         screen.textContent=first-second;
     }
@@ -148,8 +153,14 @@ function divide(first, second){
     screen.textContent = first/second;
 }
 equal.addEventListener("click",()=>{
-    if(sign = "+"){
+    if(sign == "+"){
         addition(firstNumber,secondNumber);
+    }else if(sign == "-"){
+        subtract(firstNumber,secondNumber);
+    }else if(sign == "*"){
+        multiply(firstNumber,secondNumber);
+    }else if(sign =="/"){
+        divide(firstNumber,secondNumber);
     }
 })
 
