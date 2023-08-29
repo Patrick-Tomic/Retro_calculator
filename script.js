@@ -2,7 +2,7 @@
 
 
 const functions = document.querySelectorAll("#function");
-
+const equal = document.querySelector("#equal");
 const numbers = document.querySelectorAll("#number");
 const screen = document.querySelector("#screen");
 let firstNumber=0;
@@ -11,7 +11,9 @@ let sign = "";
 
     functions.forEach(func =>func.addEventListener("click",()=>{sign= func.textContent}));
     
-
+if(sign!=""){
+    screen.textContent="";
+}
 function set(num){
     switch(num){
         case 1:
@@ -131,10 +133,23 @@ firstNumber=parseInt(firstNumber);
 
 numbers.forEach(number=>number.addEventListener("click",()=>{
     screen.textContent=firstNumber;}));
-    let second = 0;
-function subtract(first){
-    screen.textContent="";
-  
+    let secondNumber = 0;
+function subtract(first,second){
+        screen.textContent=first-second;
+    }
 
+function addition(first,second){
+   screen.textContent=first+second;
 }
+function multiply(first,second){
+    screen.textContent = first*second;
+}
+function divide(first, second){
+    screen.textContent = first/second;
+}
+equal.addEventListener("click",()=>{
+    if(sign = "+"){
+        addition(firstNumber,secondNumber);
+    }
+})
 
