@@ -1,26 +1,29 @@
 
 
 
+const clear = document.querySelector("#clear");
 const functions = document.querySelectorAll("#function");
 const equal = document.querySelector("#equal");
 const numbers = document.querySelectorAll("#number");
 const screen = document.querySelector("#screen");
 let firstNumber=0;
 let sign = "";
-
+let secondNumber = 0;
 
     functions.forEach(func =>func.addEventListener("click",()=>{sign= func.textContent}));
     
-if(sign!=""){
-    screen.textContent="";
-}
+
 function set(num){
+    if(sign!=""){
+    }
     switch(num){
         case 1:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "1";
+                
             break;}
             secondNumber = secondNumber+"1";
+            
             break;
             }
             if(firstNumber==0){firstNumber = "1";
@@ -30,8 +33,10 @@ function set(num){
         case 2:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "2";
+                
             break;}
             secondNumber = secondNumber+"2";
+            
             break;
             }
             if(firstNumber==0){firstNumber = "2";
@@ -41,8 +46,10 @@ function set(num){
         case 3:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "3";
+                
             break;}
             secondNumber = secondNumber+"3";
+           
             break;
             }
             if(firstNumber==0){firstNumber = "3";
@@ -52,8 +59,10 @@ function set(num){
         case 4:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "4";
+                
             break;}
             secondNumber = secondNumber+"4";
+            
             break;
             }
             if(firstNumber==0){firstNumber = "4";
@@ -63,8 +72,10 @@ function set(num){
         case 5:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "5";
+                
             break;}
             secondNumber = secondNumber+"5";
+            
             break;
             }
             if(firstNumber==0){firstNumber = "5";
@@ -74,8 +85,10 @@ function set(num){
         case 6:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "6";
+               
             break;}
             secondNumber = secondNumber+"6";
+            
             break;
             }
             if(firstNumber==0){firstNumber = "6";
@@ -85,8 +98,10 @@ function set(num){
         case 7:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "7";
+                
             break;}
             secondNumber = secondNumber+"7";
+           
             break;
             }
             if(firstNumber==0){firstNumber = "7";
@@ -96,8 +111,10 @@ function set(num){
         case 8:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "8";
+            
             break;}
             secondNumber = secondNumber+"8";
+           
             break;
             }
             if(firstNumber==0){firstNumber = "8";
@@ -107,8 +124,10 @@ function set(num){
         case 9:
             if(sign!=""){
                 if(secondNumber==0){secondNumber = "9";
+              
             break;}
             secondNumber = secondNumber+"9";
+          
             break;
             }
             if(firstNumber==0){firstNumber = "9";
@@ -118,8 +137,10 @@ function set(num){
         case 0: 
         if(sign!=""){
             if(secondNumber==0){secondNumber = "0";
+            
         break;}
         secondNumber = secondNumber+"0";
+        
         break;
         }
             if(firstNumber==0){firstNumber = "0";
@@ -129,28 +150,31 @@ function set(num){
     }
 } 
 
-firstNumber=parseInt(firstNumber);
-
+ 
 numbers.forEach(number=>number.addEventListener("click",()=>{
     if(sign!=""){
         screen.textContent=secondNumber;
-    }
-    screen.textContent=firstNumber;}));
-   
-    let secondNumber = 0;
-    secondNumber=parseInt(secondNumber);
+    }   
+    else{screen.textContent=firstNumber;}
+    
+    
+    
+}));
+    
+    
+    
 function subtract(first,second){
-        screen.textContent=first-second;
+        screen.textContent=parseInt(first)-parseInt(second);
     }
 
 function addition(first,second){
-   screen.textContent=first+second;
+   screen.textContent=parseInt(first)+parseInt(second);
 }
 function multiply(first,second){
-    screen.textContent = first*second;
+    screen.textContent = parseInt(first)*parseInt(second);
 }
 function divide(first, second){
-    screen.textContent = first/second;
+    screen.textContent = parseInt(first)/parseInt(second);
 }
 equal.addEventListener("click",()=>{
     if(sign == "+"){
