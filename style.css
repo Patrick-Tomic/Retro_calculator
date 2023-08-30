@@ -1,6 +1,6 @@
 
 body{
-    background-color: black;
+    background:url("background.jpg");
 }
 #flexWrap{
     display: flex;
@@ -32,6 +32,21 @@ body{
     flex-direction: column;
     
 }
+#number{
+    background-color:darkgoldenrod;
+}
+#clear{
+    background-color: darkgoldenrod;
+}
+#decimal{
+    background-color: darkgoldenrod;
+}
+#function{
+    background-color: lightblue;
+}
+#equal{
+    background-color: lightblue;
+}
 button{
     margin:10px;
     width: 50px;
@@ -45,7 +60,7 @@ button{
 }
 #screen{
     display: flex;
-
+    overflow: hidden;
     width: 300px;
     justify-content: flex-end;
     font-size:50px;
@@ -58,4 +73,9 @@ button{
     display: flex;
     justify-content: space-around;
     margin-bottom:30px ;
+}
+#backspace{
+    width:100px;
+    height:50px;
+    background-color: lightblue;
 }
