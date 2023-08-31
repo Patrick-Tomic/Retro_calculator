@@ -9,7 +9,10 @@ const screen = document.querySelector("#screen");
 const decimal = document.querySelector("#decimal");
 const backspace = document.querySelector("#backspace");
 let firstNumber=0;
+let result;
+let thirdNumber = 0;
 let sign = "";
+let hold = "";
 let secondNumber = 0;
 let int = true;
 let float = false;
@@ -47,8 +50,12 @@ function Delete(str){
         int = false;
         float = true;
     })
-    functions.forEach(func =>func.addEventListener("click",()=>{sign= func.textContent}));
- 
+    functions.forEach(func =>func.addEventListener("click",()=>{
+        
+        sign= func.textContent;
+        
+    }));
+    
 
 function set(num){
     if(sign!=""){
@@ -219,34 +226,42 @@ numbers.forEach(number=>number.addEventListener("click",()=>{
     
 function subtract(first,second){
     if(float ==true){
-        screen.textContent = parseFloat(first)-parseFloat(second);
+        result=parseFloat(first)-parseFloat(second);
+        screen.textContent = result
         return;
     }
-        screen.textContent=parseInt(first)-parseInt(second);
+        result=parseInt(first)-parseInt(second);
+        screen.textContent=result
     }
 
 function addition(first,second){
     if(float ==true){
-        screen.textContent = parseFloat(first)+parseFloat(second);
+        result=parseFloat(first)+parseFloat(second);
+        screen.textContent = result
         return;
     }
-   screen.textContent=parseInt(first)+parseInt(second);
+    result=parseInt(first)+parseInt(second);
+   screen.textContent=result
 }
 function multiply(first,second){
     if(float ==true){
-        screen.textContent = parseFloat(first)*parseFloat(second);
+        result=parseFloat(first)*parseFloat(second);
+        screen.textContent = result
         return;
     }
     screen.textContent = parseInt(first)*parseInt(second);
 }
 function divide(first, second){
     if(float ==true){
-        screen.textContent = parseFloat(first)/parseFloat(second);
+        result = parseFloat(first)/parseFloat(second);
+        screen.textContent = result
         return;
     }
-    screen.textContent = parseInt(first)/parseInt(second);
+    result=parseInt(first)/parseInt(second);
+    screen.textContent = result;
 }
 equal.addEventListener("click",()=>{
+    
     if(sign == "+"){
         addition(firstNumber,secondNumber);
     }else if(sign == "-"){
@@ -256,5 +271,7 @@ equal.addEventListener("click",()=>{
     }else if(sign =="/"){
         divide(firstNumber,secondNumber);
     }
+    secondNumber = 0;
+    firstNumber=result;
 })
 
